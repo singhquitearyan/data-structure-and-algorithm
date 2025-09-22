@@ -1,0 +1,1 @@
+Natural numbers include all positive integers from 1 to infinity. It does not include zero (0). Given a number n, find the sum of the first n natural numbers. To calculate the sum, we will use the recursive function recur_sum().
