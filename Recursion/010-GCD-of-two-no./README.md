@@ -1,5 +1,4 @@
 GCD of two numbers
-Difficulty: BasicAccuracy: 51.03%Submissions: 146K+Points: 1
 Given two positive integers a and b, find GCD of a and b.
 
 Note: Don't use the inbuilt gcd function
