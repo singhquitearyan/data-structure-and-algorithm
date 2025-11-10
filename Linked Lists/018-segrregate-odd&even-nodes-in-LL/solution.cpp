@@ -1,6 +1,6 @@
 //Author: Aryan Singh
 //Date: 16/10/25
-//Description: I've copied it frpm my leetcode sbmissions thats why it's ListNode is according to it.
+//Description: 
  struct ListNode {
      int val;
      ListNode *next;
