@@ -7,8 +7,11 @@
 using namespace std;
 
 int stairs(int n){
-    if(n == 1 || n == 2) return n;
+    if(n < 0) return 0;
+    if(n == 0) return 1;
     return stairs(n-1) + stairs(n-2);
+    // (n-1) for bcoz you came from the previous step
+    // (n-2) for bcoz you came from the previous previous steps
 }
 int main(){
     int n;
