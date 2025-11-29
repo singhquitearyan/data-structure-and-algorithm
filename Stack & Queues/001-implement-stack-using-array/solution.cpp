@@ -1,77 +1,71 @@
 //Author: Aryan Singh
 //Date: 13/11/25
 //Description:
-
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-class myStack {
-private:
-    int* arr;
-    int n;
-    int top;
+#define MAX 100
+
+class Stack {
+    int arr[MAX];
+    int top = -1; 
 
 public:
-    // Constructor
-    myStack(int size) {
-        n = size;
-        top = -1;
-        arr = new int[n];
-    }
 
-    // Destructor to free memory
-    ~myStack() {
-        delete[] arr;
-    }
-
-    // Check if stack is empty
-    bool isEmpty() {
-        return (top == -1);
-    }
-
-    // Check if stack is full
-    bool isFull() {
-        return (top == n - 1);
-    }
-
-    // Push element onto stack
     void push(int x) {
-        if (isFull()) {
-            cout << "Stack Overflow!" << endl;
+        if (top == MAX - 1) {
+            cout << "Stack Overflow\n";
             return;
         }
         arr[++top] = x;
     }
 
-    // Pop element from stack
+    int peek() {
+        if (top == -1) {
+            cout << "Stack is empty\n";
+            return -1;
+        }
+        return arr[top];
+    }
+
     int pop() {
-        if (isEmpty()) {
-            cout << "Stack Underflow!" << endl;
+        if (top == -1) {
+            cout << "Stack Underflow\n";
             return -1;
         }
         return arr[top--];
     }
 
-    // Peek top element
-    int peek() {
-        if (isEmpty()) {
-            cout << "Stack is empty!" << endl;
-            return -1;
-        }
-        return arr[top];
+    int size() {
+        return top + 1;
     }
-};
+
+    void display() {
+        if (top == -1) {
+            cout << "Stack is empty\n";
+            return;
+        }
+        cout << "Stack elements: ";
+        for (int i = top; i >= 0; i--) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+    }
+}; // ← class needs semicolon
 
 int main() {
-    myStack s(5);
+    Stack s; // create object
 
     s.push(10);
     s.push(20);
     s.push(30);
 
+    s.display();
+
     cout << "Top element: " << s.peek() << endl;
-    cout << "Popped element: " << s.pop() << endl;
-    cout << "Top after pop: " << s.peek() << endl;
+    cout << "Popped: " << s.pop() << endl;
+
+    s.display();
 
     return 0;
 }
