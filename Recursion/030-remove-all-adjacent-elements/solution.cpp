@@ -1,6 +1,7 @@
 //Author: Aryan Singh
 //Date: 21/01/26
-//Description:
+//Description: didn't understand some of the concepts like how it is removing
+// when there is a duplicate elemnts
 
 string removeDuplicates(string s) {
     if (s.length() <= 1)
